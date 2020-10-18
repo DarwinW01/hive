@@ -43,6 +43,7 @@ jobs:
         # queries: ./path/to/local/query, your-org/your-repo/queries@main
 
     - run: |
+       sudo apt install -y libsnappy-dev
        cmake -DCMAKE_BUILD_TYPE=Release -DLOW_MEMORY_NODE=ON -DCLEAR_VOTES=ON -DSKIP_BY_TX_ID=OFF -DBUILD_HIVE_TESTNET=OFF -DENABLE_MIRA=OFF -DHIVE_STATIC_BUILD=ON .
        make hived
 
